@@ -2,6 +2,10 @@
 
 Um quiz interativo sobre exploração espacial, com 10 perguntas de múltipla escolha. Responda às perguntas, acompanhe sua pontuação e veja seu resultado ao final.
 
+## Sobre o projeto
+
+Este mini projeto foi desenvolvido para um workshop do GitHub realizado em 20 de outubro de 2026, na faculdade FIAP.
+
 ## Como jogar
 
 Abra o arquivo `index.html` em qualquer navegador moderno. Não é necessário instalar dependências nem iniciar um servidor.
