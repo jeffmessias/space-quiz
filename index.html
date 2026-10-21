@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f5ff">
-  <title>Orbit — Space Exploration Quiz</title>
+  <title>Orbit — Quiz de Exploração Espacial</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -334,22 +334,22 @@
 </head>
 <body>
   <main class="app">
-    <div class="brand" aria-label="Orbit Space Quiz">
+    <div class="brand" aria-label="Orbit — Quiz Espacial">
       <span class="brand-mark" aria-hidden="true">✦</span>
-      <span>Orbit · Space Quiz</span>
+      <span>Orbit · Quiz Espacial</span>
     </div>
 
     <section class="card" aria-live="polite">
       <div id="quiz-screen">
-        <p class="eyebrow">Mission briefing</p>
-        <h1>Explore the cosmos</h1>
-        <p class="subtitle">Ten questions. One tiny step for your brain.</p>
+        <p class="eyebrow">Briefing da missão</p>
+        <h1>Explore o cosmos</h1>
+        <p class="subtitle">Dez perguntas. Um pequeno passo para o seu cérebro.</p>
 
         <div class="status-row">
-          <span id="question-counter">Question <strong>1</strong> of 10</span>
-          <span>⭐ Score: <strong class="score-value" id="score">0</strong></span>
+          <span id="question-counter">Pergunta <strong>1</strong> de 10</span>
+          <span>⭐ Pontuação: <strong class="score-value" id="score">0</strong></span>
         </div>
-        <div class="progress-track" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+        <div class="progress-track" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
           <div class="progress-fill" id="progress-fill"></div>
         </div>
 
@@ -357,73 +357,73 @@
         <div class="answers" id="answers"></div>
         <p class="feedback" id="feedback" aria-live="assertive"></p>
         <button class="next-button" id="next-button" type="button" disabled>
-          <span>Choose an answer</span>
+          <span>Escolha uma resposta</span>
         </button>
       </div>
 
       <div class="result-screen hidden" id="result-screen" role="status">
         <div class="result-emoji" id="result-emoji" aria-hidden="true"></div>
-        <p class="eyebrow">Mission complete</p>
+        <p class="eyebrow">Missão concluída</p>
         <h1 id="result-title"></h1>
         <p class="result-copy" id="result-copy"></p>
-        <p class="result-score">Your score: <strong id="final-score"></strong> / 10</p>
-        <button class="restart-button" id="restart-button" type="button">↻ &nbsp; Explore again</button>
+        <p class="result-score">Sua pontuação: <strong id="final-score"></strong> / 10</p>
+        <button class="restart-button" id="restart-button" type="button">↻ &nbsp; Explorar novamente</button>
       </div>
     </section>
-    <p class="footer-note">A little curiosity goes a long way. 🚀</p>
+    <p class="footer-note">Um pouco de curiosidade leva você longe. 🚀</p>
   </main>
 
   <script>
     (() => {
       const questions = [
         {
-          question: "Which planet is known as the Red Planet?",
-          answers: ["Venus", "Mars", "Jupiter", "Mercury"],
+          question: "Qual planeta é conhecido como Planeta Vermelho?",
+          answers: ["Vênus", "Marte", "Júpiter", "Mercúrio"],
           correct: 1
         },
         {
-          question: "What is the name of the galaxy we call home?",
-          answers: ["Andromeda", "Whirlpool Galaxy", "Milky Way", "Sombrero Galaxy"],
+          question: "Qual é o nome da galáxia onde vivemos?",
+          answers: ["Galáxia de Andrômeda", "Galáxia do Redemoinho", "Via Láctea", "Galáxia do Sombrero"],
           correct: 2
         },
         {
-          question: "Which planet has the most prominent ring system?",
-          answers: ["Saturn", "Neptune", "Earth", "Mars"],
+          question: "Qual planeta tem o sistema de anéis mais proeminente?",
+          answers: ["Saturno", "Netuno", "Terra", "Marte"],
           correct: 0
         },
         {
-          question: "What force keeps planets in orbit around the Sun?",
-          answers: ["Magnetism", "Friction", "Gravity", "Solar wind"],
+          question: "Que força mantém os planetas em órbita ao redor do Sol?",
+          answers: ["Magnetismo", "Atrito", "Gravidade", "Vento solar"],
           correct: 2
         },
         {
-          question: "Which is the largest planet in our solar system?",
-          answers: ["Saturn", "Jupiter", "Neptune", "Uranus"],
+          question: "Qual é o maior planeta do nosso Sistema Solar?",
+          answers: ["Saturno", "Júpiter", "Netuno", "Urano"],
           correct: 1
         },
         {
-          question: "What was the first artificial satellite to orbit Earth?",
+          question: "Qual foi o primeiro satélite artificial a orbitar a Terra?",
           answers: ["Sputnik 1", "Vostok 1", "Apollo 11", "Explorer 1"],
           correct: 0
         },
         {
-          question: "Which star is at the center of our solar system?",
-          answers: ["Polaris", "Sirius", "The Sun", "Betelgeuse"],
+          question: "Qual estrela fica no centro do nosso Sistema Solar?",
+          answers: ["Polaris", "Sírius", "O Sol", "Betelgeuse"],
           correct: 2
         },
         {
-          question: "What do we call a rocky object that burns up in Earth's atmosphere?",
-          answers: ["Asteroid", "Meteor", "Comet", "Moon"],
+          question: "Como chamamos um objeto rochoso que queima ao entrar na atmosfera da Terra?",
+          answers: ["Asteroide", "Meteoro", "Cometa", "Lua"],
           correct: 1
         },
         {
-          question: "Which planet is famous for its Great Red Spot?",
-          answers: ["Mars", "Jupiter", "Venus", "Saturn"],
+          question: "Qual planeta é famoso por sua Grande Mancha Vermelha?",
+          answers: ["Marte", "Júpiter", "Vênus", "Saturno"],
           correct: 1
         },
         {
-          question: "About how long does sunlight take to reach Earth?",
-          answers: ["8 seconds", "8 minutes", "8 hours", "8 days"],
+          question: "Quanto tempo a luz do Sol leva para chegar à Terra, aproximadamente?",
+          answers: ["8 segundos", "8 minutos", "8 horas", "8 dias"],
           correct: 1
         }
       ];
@@ -446,13 +446,13 @@
         const current = questions[questionIndex];
         answered = false;
         questionElement.textContent = current.question;
-        counterElement.innerHTML = `Question <strong>${questionIndex + 1}</strong> of ${questions.length}`;
+        counterElement.innerHTML = `Pergunta <strong>${questionIndex + 1}</strong> de ${questions.length}`;
         progressFill.style.width = `${(questionIndex / questions.length) * 100}%`;
         progressTrack.setAttribute("aria-valuenow", String(questionIndex));
         feedbackElement.textContent = "";
         feedbackElement.className = "feedback";
         nextButton.disabled = true;
-        nextButton.querySelector("span").textContent = "Choose an answer";
+        nextButton.querySelector("span").textContent = "Escolha uma resposta";
         answersElement.replaceChildren();
 
         current.answers.forEach((answer, index) => {
@@ -477,11 +477,11 @@
         if (selectedIndex === current.correct) {
           score += 1;
           scoreElement.textContent = String(score);
-          feedbackElement.textContent = "That's right! Stellar work ✨";
+          feedbackElement.textContent = "Isso mesmo! Mandou muito bem ✨";
           feedbackElement.classList.add("is-correct");
         } else {
           buttons[selectedIndex].classList.add("wrong");
-          feedbackElement.textContent = `Not quite — ${current.answers[current.correct]} is the answer.`;
+          feedbackElement.textContent = `Não foi dessa vez — a resposta é ${current.answers[current.correct]}.`;
           feedbackElement.classList.add("is-wrong");
         }
 
@@ -489,17 +489,17 @@
         progressTrack.setAttribute("aria-valuenow", String(questionIndex + 1));
         nextButton.disabled = false;
         nextButton.querySelector("span").textContent =
-          questionIndex === questions.length - 1 ? "See your results" : "Next question";
+          questionIndex === questions.length - 1 ? "Ver resultado" : "Próxima pergunta";
       }
 
       function showResults() {
         const result = score >= 9
-          ? { emoji: "🤩", title: "Out of this world!", copy: "A true cosmic explorer. The universe has nothing on you!" }
+          ? { emoji: "🤩", title: "Você é de outro mundo!", copy: "Exploração espacial é com você! O universo não tem segredos para você." }
           : score >= 6
-            ? { emoji: "🚀", title: "Great space sense!", copy: "You’re charting an impressive course through the cosmos." }
+            ? { emoji: "🚀", title: "Mandou bem no espaço!", copy: "Você está traçando uma jornada impressionante pelo cosmos." }
             : score >= 3
-              ? { emoji: "🌙", title: "Curious cosmonaut!", copy: "Every great explorer starts somewhere. Keep looking up!" }
-              : { emoji: "🌱", title: "Mission launched!", copy: "There’s a whole universe left to discover. Ready for another orbit?" };
+              ? { emoji: "🌙", title: "Curiosidade cósmica!", copy: "Toda grande exploração começa com curiosidade. Continue olhando para o céu!" }
+              : { emoji: "🌱", title: "Missão iniciada!", copy: "Ainda há um universo inteiro para descobrir. Que tal mais uma órbita?" };
 
         quizScreen.classList.add("hidden");
         resultScreen.classList.remove("hidden");
